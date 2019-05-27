@@ -3,6 +3,7 @@ class FlatsController < ApplicationController
   end
 
   def new
+    Flat.new
   end
 
   def create
