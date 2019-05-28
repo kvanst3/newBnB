@@ -1,0 +1,11 @@
+TEST
+<%= current_user.email %>
+<br>
+
+<% @flats.each do |flat| %>
+
+    <%= if flat.user_id == current_user.id %>
+      <%= flat.title %>
+    <% end %>
+
+<% end %>
