@@ -29,7 +29,8 @@ class FlatsController < ApplicationController
 
   def update
     @flat = Flat.find(params[:id])
-    @flat.update(params[:flat])
+    @flat.update(flat_params)
+    redirect_to flat_path(@flat)
   end
 
   def destroy
@@ -37,7 +38,7 @@ class FlatsController < ApplicationController
     @flat.destroy
   end
 
-  # private
+private
 
   def flat_params
     params.require(:flat).permit(:title, :description, :price_per_night, :housing_type, :max_ppl, :latitude, :longitute)
