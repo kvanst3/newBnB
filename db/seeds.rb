@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# 50.times do
-#   ename = Faker::Internet.email
-#   epass = Faker::Internet.password
-#   User.create(email: ename, password: epass)
-#   puts "Done Seeding..."
-# end
+50.times do
+  ename = Faker::Internet.email
+  epass = Faker::Internet.password
+  User.create(email: ename, password: epass)
+  puts "Done Seeding..."
+end
 
 
 flats_attribute = [
