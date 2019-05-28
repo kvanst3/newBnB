@@ -35,11 +35,16 @@ class FlatsController < ApplicationController
   def destroy
     @flat = Flat.find(params[:id])
     @flat.destroy
+    redirect_to flats_path
   end
 
-  # private
+  private
 
   def flat_params
     params.require(:flat).permit(:title, :description, :price_per_night, :housing_type, :max_ppl, :latitude, :longitute)
   end
 end
+
+  #to be placed in new and edit form after Uploader is installed# PLUS ADD ADDRESS
+  # <%= f.input :photo%>
+  # <%= f.input :photo_cache, as: :hidden %>
