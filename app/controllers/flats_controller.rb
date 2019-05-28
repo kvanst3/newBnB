@@ -1,6 +1,7 @@
 class FlatsController < ApplicationController
   def index
     # @flats = Flat.all
+
     @flats = Flat.where.not(latitude: nil, longitude: nil)
 
     @markers = @flats.map do |flat|
@@ -11,14 +12,20 @@ class FlatsController < ApplicationController
         image_url: helpers.asset_url('logo.png')
       }
     end
+
+#     @flats = policy_scope(Flat)
+
   end
 
   def new
     @flat = Flat.new
+    authorize @flat
   end
 
   def create
     @flat = Flat.new(flat_params)
+    @flat.user = current_user
+    authorize @flat
     if @flat.save
       redirect_to flats_path
     else
@@ -28,6 +35,7 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
+    authorize @flat
   end
 
   def search
@@ -35,16 +43,19 @@ class FlatsController < ApplicationController
 
   def edit
     @flat = Flat.find(params[:id])
+    authorize @flat
   end
 
   def update
     @flat = Flat.find(params[:id])
+    authorize @flat
     @flat.update(flat_params)
     redirect_to flat_path(@flat)
   end
 
   def destroy
     @flat = Flat.find(params[:id])
+    authorize @flat
     @flat.destroy
     redirect_to flats_path
   end
