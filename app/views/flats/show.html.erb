@@ -11,6 +11,8 @@
   <%= @flat.max_ppl %></div>
 
   <div class="row"><%= link_to "Back to the research", flats_path %></div>
+  <% if policy(@flat).edit? %>
   <div class="row"><%= link_to "Edit", edit_flat_path %></div>
+  <% end %>
 </div>
 
