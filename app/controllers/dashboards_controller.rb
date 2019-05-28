@@ -1,19 +1,5 @@
 class DashboardsController < ApplicationController
-  def new
-  end
-
-  def create
-  end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+  def profile
+    @flats = Flat.all
   end
 end
