@@ -1,5 +1,34 @@
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 </br>
-
 <%= link_to "Go to Index", flats_path %>
+
+<div class="container">
+  <h2>Book unique places to stay.</h2>
+  <div class="new_form">
+    <form action="/search" method="get">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div><label for="location">WHERE </label>
+        <input type="text" name="search[location]" id="location" placeholder="Anywhere" style="display: block;">
+
+      </div>
+
+      <div style="display: flex;">
+        <div>
+          <label for="checkin">CHECK-IN </label>
+          <input type="date" name="search[checkin]" id="checkin" style="display: block;">
+        </div>
+        <div>
+          <label for="checkout">CHECK-OUT </label>
+          <input type="date" name="search[checkout]" id="checkout" style="display: block;">
+        </div>
+      </div>
+
+
+      <input type="submit" value="Search">
+    </form>
+
+  </div>
+</div>
+
+<!-- <script src="search.js"></script> -->
+

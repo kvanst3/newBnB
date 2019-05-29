@@ -41,6 +41,17 @@ class FlatsController < ApplicationController
   end
 
   def search
+    # raise
+    @flats = Flat.near(search_params[:location], 350)
+
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
+        image_url: helpers.asset_url('logo.png')
+      }
+    end
   end
 
   def edit
@@ -66,6 +77,10 @@ class FlatsController < ApplicationController
 
   def flat_params
     params.require(:flat).permit(:title, :description, :price_per_night, :housing_type, :max_ppl, :address)
+  end
+
+  def search_params
+    params.require(:search).permit(:location, :checkin, :checkout)
   end
 end
 
