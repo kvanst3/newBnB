@@ -1,18 +1,42 @@
-<div class="container">
-  <div class="row">Name:
-  <%= @flat.title %></div>
-  <div class="row">A bit more about this place:
-  <%= @flat.description %></div>
-  <div class="row">Price per night:
-  <%= @flat.price_per_night %></div>
-  <div class="row">Type of place:
-  <%= @flat.housing_type %></div>
-  <div class="row">Number of beds:
-  <%= @flat.max_ppl %></div>
+<div class="container d-flex justify-content-between">
+  <div class="content">
+    <div class="row">Name:
+    <%= @flat.title %></div>
+    <div class="row">A bit more about this place:
+    <%= @flat.description %></div>
+    <div class="row">Price per night:
+    <%= @flat.price_per_night %></div>
+    <div class="row">Type of place:
+    <%= @flat.housing_type %></div>
+    <div class="row">Number of beds:
+    <%= @flat.max_ppl %></div>
 
-  <div class="row"><%= link_to "Back to the research", flats_path %></div>
-  <% if policy(@flat).edit? %>
-  <div class="row"><%= link_to "Edit", edit_flat_path %></div>
-  <% end %>
+    <div class="row"><%= link_to "Back to the research", flats_path %></div>
+    <% if policy(@flat).edit? %>
+    <div class="row"><%= link_to "Edit", edit_flat_path(@flat) %></div>
+    <% end %>
+  </div>
+  <div class="form">
+    <h5>Confirm dates & guests for total stay price
+      <div class="new_form">
+    <form action="/flats/<%= @flat.id %>/bookings" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div style="display: flex;">
+        <div>
+          <label for="start_date">CHECK-IN</label>
+          <input type="date" name="booking[start_date]" id="start_date" style="display: block;">
+        </div>
+        <div>
+          <label for="end_date">CHECK-OUT</label>
+          <input type="date" name="booking[end_date]" id="end_date" style="display: block;">
+        </div>
+        <div>
+          <label for="guest">Number of guests</label>
+          <input type="integer" name="booking[guest]" id="guest" style="display: block;">
+        </div>
+      </div>
+      <input type="submit" value="Book">
+    </form>
+  </div>
+  </div>
 </div>
-
