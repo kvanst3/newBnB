@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/profile', to: 'dashboards#profile'
   get '/map', to: 'flats#map'
+  get '/search', to: 'flats#search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
