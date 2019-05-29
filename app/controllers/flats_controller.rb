@@ -2,6 +2,10 @@ class FlatsController < ApplicationController
   def index
     # @flats = Flat.all
 
+    @flats = policy_scope(Flat)
+  end
+
+  def map
     @flats = Flat.where.not(latitude: nil, longitude: nil)
 
     @markers = @flats.map do |flat|
@@ -12,9 +16,6 @@ class FlatsController < ApplicationController
         image_url: helpers.asset_url('logo.png')
       }
     end
-
-#     @flats = policy_scope(Flat)
-
   end
 
   def new
