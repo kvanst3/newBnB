@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   def after_sign_in_path_for(resource_or_scope)
-    @start_date = session[:form_data]["booking"]["start_date"]
+    # @start_date = session[:form_data]["booking"]["start_date"]
 
     stored_location_for(resource_or_scope) || super
     # raise

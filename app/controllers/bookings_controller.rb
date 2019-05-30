@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     if current_user.nil?
 
      # Store the form data in the session so we can retrieve it after login
-     session[:form_data] = params
+     # session[:form_data] = params
 
 
      redirect_to new_user_session_path

@@ -38,6 +38,7 @@ class FlatsController < ApplicationController
     @flat = Flat.find(params[:id])
     authorize @flat
     @booking = Booking.new
+    session[:return_to] ||= request.referer
   end
 
   def search
