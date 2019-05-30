@@ -1,14 +1,14 @@
-<h1>Pages#home</h1>
-</br>
-<%= link_to "Go to Index", flats_path %>
 
-<div class="container">
-  <h2>Book unique places to stay.</h2>
-  <div class="new_form">
-    <form action="/search" method="get">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <div><label for="location">WHERE </label>
-        <input type="text" name="search[location]" id="location" placeholder="Anywhere" style="display: block;">
+<!-- <%= link_to "Go to Index", flats_path %> -->
+<div id="container-all">
+  <div class="container">
+    <h2>Book unique places to stay.</h2>
+    <div class="new_form">
+      <form action="/search" method="get">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div><label for="location">WHERE </label>
+          <input type="text" name="search[location]" id="location" placeholder="Anywhere" style="display: block;">
+
 
       </div>
 
@@ -21,14 +21,12 @@
           <label for="checkout">CHECK-OUT </label>
           <input type="date" name="search[checkout]" id="end_date" style="display: block;">
         </div>
-      </div>
-
 
       <input type="submit" value="Search" id="book-button">
     </form>
 
+    </div>
   </div>
 </div>
-
 <!-- <script src="search.js"></script> -->
 

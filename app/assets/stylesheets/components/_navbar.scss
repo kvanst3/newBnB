@@ -1,12 +1,88 @@
-.navbar-lewagon {
+/* corresponds to <header>  */
+#header-navbar {
+  background: #EDEDED;
+  width: 100%;
+}
+
+#header-navbar::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+#logo {
+  height: 90px;
+  padding: 10px;
+  padding-left: 30px;
+
+}
+
+#div-container {
+  width: 100%;
+  margin: 0 auto;
+  height: 70px;
+  display: flex;
   justify-content: space-between;
-  background: white;
+  box-shadow: 5px 10px 12px #FEFEFE;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+#nav-container ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+#nav-container li {
+  display: inline-block;
+  margin-left: 20px;
+  padding-top: 10px;
+  width: auto;
+  position: relative;
+  text-align: center;
+}
+
+/* color of links */
+#nav-container ul > li > a, .dropdown-item {
+  color: #989898;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+#nav-container a:hover {
+  color: #BBBBBB;
+}
+
+#nav-container a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #DDDDDD;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 200ms;
+}
+
+#nav-container a.menu-links:hover::before {
+  width: 100%;
+}
+
+/* size of logo in the  navbar when logged in */
+#navbarDropdown {
+  width: 50px;
+  position: relative;
+  bottom: 4px;
+}
+
+/* changes pointer when hovering over the logo */
+#navbarDropdown:hover {
+  cursor:pointer;
+}
+
+/* font color in the drop-down menu */
+.dropdown-item {
+  text-align: center;
 }
