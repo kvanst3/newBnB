@@ -76,7 +76,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:title, :description, :price_per_night, :housing_type, :max_ppl, :address)
+    params.require(:flat).permit(:title, :description, :price_per_night, :housing_type, :max_ppl, :address, :photo)
   end
 
   def search_params
@@ -84,11 +84,11 @@ class FlatsController < ApplicationController
   end
 end
 
-  #to be placed in new and edit form after Uploader is installed# PLUS ADD ADDRESS
+#to be placed in new and edit form after Uploader is installed# PLUS ADD ADDRESS
   # <%= f.input :photo%>
-  # <%= f.input :photo_cache, as: :hidden %>
+# <%= f.input :photo_cache, as: :hidden %>
 
-#index page
+# index page
 # <div class="container">
 #   <%= link_to 'Add new', new_flat_path %>
 #   <div class="cards">

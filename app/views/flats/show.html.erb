@@ -10,6 +10,7 @@
     <%= @flat.housing_type %></div>
     <div class="row">Number of beds:
     <%= @flat.max_ppl %></div>
+    <div class="row"><%= cl_image_tag @flat.photo, height: 300, width: 300, crop: :fill %></div>
 
     <div class="row"><%= link_to "Back to the research", flats_path %></div>
     <% if policy(@flat).edit? %>
