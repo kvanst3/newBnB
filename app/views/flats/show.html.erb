@@ -12,10 +12,9 @@
     <%= @flat.max_ppl %></div>
     <div class="row"><%= cl_image_tag @flat.photo, height: 300, width: 300, crop: :fill %></div>
 
-    <div class="row"><%= link_to "Back to the research", flats_path %></div>
-    <% if policy(@flat).edit? %>
-    <div class="row"><%= link_to "Edit", edit_flat_path(@flat) %></div>
-    <% end %>
+   <div class="row"><%= link_to "Back to the research", session.delete(:return_to) %></div>
+
+
   </div>
   <div class="form">
     <h5>Confirm dates & guests for total stay price
@@ -35,9 +34,11 @@
           <label for="guest">Number of guests</label>
           <input type="integer" name="booking[guest]" id="guest" style="display: block;">
         </div>
-      </div>
-      <input type="submit" value="Book">
+      <input type="submit" value="Book" id="book-button">
     </form>
   </div>
   </div>
 </div>
+
+<!-- <button id="book-button">THIS IS WHERE</button> -->
+

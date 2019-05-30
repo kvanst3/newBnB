@@ -7,7 +7,10 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 import { initAutocomplete} from '../plugins/init_autocomplete';
+import { datePicker} from '../packs/bookingdatagathering';
+
 
 initMapbox();
 
 initAutocomplete();
+datePicker();

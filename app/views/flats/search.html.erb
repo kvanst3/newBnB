@@ -3,9 +3,6 @@
     <div class="cards">
       <% @flats.each do |flat|%>
         <div class="card d-flex flex-column">
-          <% if policy(flat).destroy? %>
-            <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe , flat_path(flat), method: :delete, id: "trash" %>
-          <% end %>
           <div> <%= link_to flat.title, flat_path(flat)  %></div>
          <div> <%= flat.description %> </div>
          <div> <%= flat.housing_type %> </div>

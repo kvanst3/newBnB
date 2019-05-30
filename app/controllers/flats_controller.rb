@@ -38,6 +38,7 @@ class FlatsController < ApplicationController
     @flat = Flat.find(params[:id])
     authorize @flat
     @booking = Booking.new
+    session[:return_to] ||= request.referer
   end
 
   def search
@@ -88,19 +89,12 @@ end
   # <%= f.input :photo%>
 # <%= f.input :photo_cache, as: :hidden %>
 
-# index page
-# <div class="container">
-#   <%= link_to 'Add new', new_flat_path %>
-#   <div class="cards">
-#     <% @flats.each do |flat|%>
-#       <div class="card d-flex flex-column">
-#         <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe , flat_path(flat), method: :delete, id: "trash" %>
-#         <div> <%= link_to flat.title, flat_path(flat)  %></div>
-#        <div> <%= flat.description %> </div>
-#        <div> <%= flat.housing_type %> </div>
-#        <div> <%= flat.max_ppl %> </div>
-#        <div> <%= flat.price_per_night %> </div>
-#       </div>
-#     <% end %>
-#   </div>
-# </div>
+  #to be placed in MyFlats - Dashboard controller
+  # <% if policy(flat).destroy? %>
+  #   <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe , flat_path(flat), method: :delete, id: "trash" %>
+  # <% end %>
+
+  # <% if policy(@flat).edit? %>
+  #   <div class="row"><%= link_to "Edit", edit_flat_path(@flat) %></div>
+  # <% end %>
+
