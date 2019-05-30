@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bookings/:id', to: 'bookings#show', as: 'bookings'
+  # get 'bookings/create'
   # get 'flats/index'
   # get 'flats/new'
   # get 'flats/create'
@@ -13,10 +15,13 @@ Rails.application.routes.draw do
   # get 'dashboards/edit'
   # get 'dashboards/update'
   # get 'dashboards/destroy'
-  resources :flats
+  resources :flats do
+    resources :bookings, only: :create
+  end
   devise_for :users
   root to: 'pages#home'
   get '/profile', to: 'dashboards#profile'
   get '/map', to: 'flats#map'
+  get '/search', to: 'flats#search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

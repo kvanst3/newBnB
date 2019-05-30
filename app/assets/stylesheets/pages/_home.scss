@@ -1,1 +1,32 @@
 // Specific CSS for your home-page
+
+.container {
+  width: 440px;
+  height: 480px;
+  background-color: white;
+  border: 1px;
+  border-color: #676767;
+  border-style: solid;
+  position: relative;
+  margin-top: 5%;
+  margin-left: 12%;
+
+  padding: 15px;
+
+  box-shadow: 4px 10px 12px #999;
+}
+
+label {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: 0px;
+    margin-top: 22px;
+}
+
+h2, .h2 {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+  padding-bottom: 2px;
+}
