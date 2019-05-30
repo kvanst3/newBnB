@@ -24,8 +24,9 @@ Rails.application.routes.draw do
   get '/map', to: 'flats#map'
   get '/search', to: 'flats#search'
   get '/mytrips', to: 'dashboards#mytrips'
-  get '/myflats', to: 'dashboard#myflats'
+  get '/myflats', to: 'flats#myflats'
   get '/edit', to: 'dashboards#edit'
   patch '/update', to: 'dashboard#update'
+  # devise_for :users, :controllers => { :registrations => :registrations }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

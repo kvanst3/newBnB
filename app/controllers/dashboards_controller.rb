@@ -15,8 +15,10 @@ class DashboardsController < ApplicationController
     authorize @bookings
   end
 
-  def myflats
-  end
+  # def myflats
+  #   @flats = Flat.where(user_id: curren_user)
+  #   authorize @flats
+  # end
 
   private
 
