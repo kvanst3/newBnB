@@ -12,4 +12,5 @@ class BookingPolicy < ApplicationPolicy
   def mytrips?
     true
   end
+
 end

@@ -1,12 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :store_user_location!, if: :storable_location?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: [:search, :show, :map]
 
   include Pundit
 
-  after_action :verify_authorized, except: [:index, :map, :search, :show], unless: :skip_pundit?
+  after_action :verify_authorized, except: [:index, :map, :search, :show, :profile, :editprofile], unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   def after_sign_in_path_for(resource_or_scope)
@@ -14,6 +15,12 @@ class ApplicationController < ActionController::Base
 
     stored_location_for(resource_or_scope) || super
     # raise
+  end
+
+    def configure_permitted_parameters
+
+    # For additional in app/views/devise/registrations/edit.html.erb
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :description, :photo])
   end
 
   private

@@ -25,5 +25,7 @@ Rails.application.routes.draw do
   get '/search', to: 'flats#search'
   get '/mytrips', to: 'dashboards#mytrips'
   get '/myflats', to: 'dashboard#myflats'
+  get '/edit', to: 'dashboards#edit'
+  patch '/update', to: 'dashboard#update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

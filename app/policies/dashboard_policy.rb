@@ -5,10 +5,6 @@ class DashboardPolicy < ApplicationPolicy
     end
   end
 
-  def profile?
-    user_is_owner_or_admin?
-  end
-
   def mytrips?
     true
   end

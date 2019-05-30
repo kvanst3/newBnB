@@ -1,0 +1,15 @@
+
+
+<div class="container">
+  <h2>Edit Profile</h2>
+  <div class="new_form">
+    <%= simple_form_for @usertoedit, url: update_path, html: { method: :patch } do |f| %>
+        <%= f.input :email %>
+        <%= f.input :username %>
+        <%= f.input :description %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit "Add a Flat", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
