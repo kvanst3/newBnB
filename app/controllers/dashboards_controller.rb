@@ -1,5 +1,13 @@
 class DashboardsController < ApplicationController
-  def profile
+  skip_after_action :verify_authorized, only: [:edit, :mytrips]
+
+  def edit
+    @usertoedit = current_user
+  end
+
+  def update
+    current_user.update(user_params)
+
   end
 
   def mytrips
@@ -7,6 +15,14 @@ class DashboardsController < ApplicationController
     authorize @bookings
   end
 
-  def myflats
+  # def myflats
+  #   @flats = Flat.where(user_id: curren_user)
+  #   authorize @flats
+  # end
+
+  private
+
+  def user_params
+    params.require(:flat).permit(:email, :username, :description, :photo)
   end
 end

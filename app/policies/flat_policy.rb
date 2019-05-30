@@ -14,6 +14,14 @@ class FlatPolicy < ApplicationPolicy
     true
   end
 
+  def mytrips?
+    true
+  end
+
+  def myflats?
+    true
+  end
+
   def update?
     true
   end

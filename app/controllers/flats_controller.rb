@@ -43,7 +43,7 @@ class FlatsController < ApplicationController
 
   def search
     # raise
-    @flats = Flat.near(search_params[:location], 350)
+    @flats = Flat.near(search_params[:location], 25)
 
     @markers = @flats.map do |flat|
       {
@@ -72,6 +72,11 @@ class FlatsController < ApplicationController
     authorize @flat
     @flat.destroy
     redirect_to flats_path
+  end
+
+  def myflats
+    @flats = Flat.where(user_id: current_user)
+    authorize @flats
   end
 
   private

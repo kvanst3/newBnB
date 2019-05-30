@@ -1,2 +1,19 @@
-TEST
-<%= current_user.email %>
+<div class="container">
+  <div style="text-align: right"><%= link_to 'Edit', edit_user_registration_path %></div>
+  <div>
+    <%= cl_image_tag current_user.photo %>
+  </div>
+
+  <div>
+    Email address: <%= current_user.email %>
+  </div>
+  <div>
+    User name: <%= current_user.username %>
+  </div>
+  <div>
+    Description: <%= current_user.description %>
+  </div>
+</div>
+
+<div><%= link_to 'My Trips', mytrips_path %></div>
+<div><%= link_to 'My Flats', myflats_path %></div>
