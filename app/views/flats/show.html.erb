@@ -5,14 +5,15 @@
     <div class="row">A bit more about this place:
     <%= @flat.description %></div>
     <div class="row">Price per night:
-    <%= @flat.price_per_night %></div>
+    <%= @flat.price_per_night %> €</div>
     <div class="row">Type of place:
     <%= @flat.housing_type %></div>
     <div class="row">Number of beds:
-    <%= @flat.max_ppl %></div>
+    <%= @flat.max_ppl %>people</div>
     <div class="row"><%= cl_image_tag @flat.photo, height: 300, width: 300, crop: :fill %></div>
 
    <div class="row"><%= link_to "Back to the research", session.delete(:return_to) %></div>
+   <div class="row"><%= link_to "edit", edit_flat_path(@flat) %></div>
 
 
   </div>
