@@ -43,7 +43,7 @@ class FlatsController < ApplicationController
 
   def search
     # raise
-    @flats = Flat.near(search_params[:location], 350)
+    @flats = Flat.near(search_params[:location], 25)
 
     @markers = @flats.map do |flat|
       {
