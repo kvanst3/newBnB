@@ -1,7 +1,9 @@
 /* corresponds to <header>  */
 #header-navbar {
-  background: #EDEDED;
+  background: #FDFDFD;
   width: 100%;
+  opacity: 0.8;
+  position: fixed;
 }
 
 #header-navbar::after {
@@ -23,7 +25,7 @@
   height: 70px;
   display: flex;
   justify-content: space-between;
-  box-shadow: 5px 10px 12px #FEFEFE;
+  // box-shadow: 5px 10px 12px #FEFEFE;
 }
 
 #nav-container ul {
@@ -50,14 +52,14 @@
 }
 
 #nav-container a:hover {
-  color: #BBBBBB;
+  color: #eb6909;
 }
 
 #nav-container a::before {
   content: '';
   display: block;
   height: 5px;
-  background-color: #DDDDDD;
+  background-color: #eb6909;
 
   position: absolute;
   top: 0;
@@ -68,6 +70,8 @@
 
 #nav-container a.menu-links:hover::before {
   width: 100%;
+  opacity: 0.8;
+  border-radius: 8px;
 }
 
 /* size of logo in the  navbar when logged in */
