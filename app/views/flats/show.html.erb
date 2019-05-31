@@ -1,22 +1,45 @@
-<div class="container d-flex justify-content-between">
-  <div class="content">
-    <div class="row">Name:
-    <%= @flat.title %></div>
-    <div class="row">A bit more about this place:
-    <%= @flat.description %></div>
-    <div class="row">Price per night:
-    <%= @flat.price_per_night %> €</div>
-    <div class="row">Type of place:
-    <%= @flat.housing_type %></div>
-    <div class="row">Number of beds:
-    <%= @flat.max_ppl %>people</div>
-    <div class="row"><%= cl_image_tag @flat.photo, height: 300, width: 300, crop: :fill %></div>
+<div class="spacer-on-top-search"></div>
 
-   <div class="row"><%= link_to "Back to the research", session.delete(:return_to) %></div>
+<div class="row-search"><%= link_to "Back to the research", session.delete(:return_to) %></div>
 <!--    <div class="row"><%= link_to "edit", edit_flat_path(@flat) %></div> -->
 
+<div class="show-container">
+ <!-- Box with all the cards -->
 
+  <div class="show-card">
+    <div class="row">
+      <div class="row"><%= cl_image_tag @flat.photo, id: "show-big-image" %></div>
+    </div>
+    <div id="show-card-info">
+      <div class="content">
+        <div class="row">
+          Name:
+          <%= @flat.title %>
+        </div>
+        <div class="row">
+          A bit more about this place:
+          <%= @flat.description %>
+        </div>
+        <div class="row">
+          Price per night:
+          <%= @flat.price_per_night %> €
+        </div>
+        <div class="row">
+          Type of place:
+          <%= @flat.housing_type %>
+          </div>
+        <div class="row">
+          Number of beds:
+          <%= @flat.max_ppl %>people
+        </div>
+      </div>
+    </div>
   </div>
+
+
+
+
+<div class="show-search-form"></div>
   <div class="form">
     <h5>Confirm dates & guests for total stay price
       <div class="new_form">
@@ -42,4 +65,3 @@
 </div>
 
 <!-- <button id="book-button">THIS IS WHERE</button> -->
-
