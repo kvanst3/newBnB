@@ -1,18 +1,20 @@
 
 
 <div class="container navbar-spacing">
-  <h4 id="titlee">My flats</h4>
+  <h4 id="titlee">My flats <button id="btnnn" class="large button" onclick="window.location.href = 'http://localhost:3000/flats/new';">+</button></h4>
   <% @flats.each do |flat| %>
     <ul>
       <div class="card-productt">
-        <div id="flat-edit-button"><%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_flat_path(flat) %></div>
+        <div id="flat-edit-button"><%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_flat_path(flat), id: "flat-edit-button" %>
+          <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe , flat_path(flat), method: :delete, id: "trashh" %>
+        </div>
         <div class="text-img">
           <div id="imgg">
             <%= cl_image_tag flat.photo,  height: 100, width: 150, crop: :fill %>
           </div>
           <div id="textt">
             <div class="title-and-edit">
-              <h3><%= flat.title %></h3>
+              <h3 id="titree"> <%= link_to flat.title, flat_path(flat) %></h3>
             </div>
             <p>Description: <%= flat.description %></p>
             <p>Type: <%= flat.housing_type %></p>

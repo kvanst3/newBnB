@@ -9,7 +9,7 @@
         </div>
         <div id="text">
 
-          <h3><%= flat.title %></h3>
+          <h3 id="titree"> <%= link_to flat.title, flat_path(flat) %></h3>
           <p>From <%= booking.start_date %> till <%= booking.end_date %></p>
           <p><%= flat.description %></p>
           <p>Price per night: $<%= flat.price_per_night%></p>
