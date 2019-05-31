@@ -1,41 +1,46 @@
 
-  <div class="d-flex">
-    <div class="cards">
-      <% @flats.each do |flat|%>
-        <div class="card d-flex flex-column">
-          <div> <%= link_to flat.title, flat_path(flat)  %></div>
-         <div> <%= flat.description %> </div>
-         <div> <%= flat.housing_type %> </div>
-         <div> <%= flat.max_ppl %> </div>
-         <div> <%= flat.price_per_night %> </div>
-         <div class="card-img-top"><%= cl_image_tag flat.photo, height: 100, width: 100, crop: :fill %></div>
-        </div>
-      <% end %>
+
+<!-- contains the box with cards and map -->
+<div class="d-flex navbar-spacing">
+ <!-- Box with all the cards -->
+
+ <div class="cards" id="card-trip box-with-all-cards">
+  <% @flats.each do |flat|%>
+  <div class="card">
+    <div class="card-img-top">
+      <%= cl_image_tag flat.photo, class: "flat-picture" %>
     </div>
-    <div style="width: 33%">
-
-      <form action="/search" method="get">
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <div id="div-where">
-          <!-- <label for="location"> </label> -->
-          <div class="d-flex">
-            <input type="text" name="search[location]" id="location" placeholder="Anywhere" style="display: block;">
-            <input type="submit" value="Search">
-          </div>
-        </div>
-      </form>
-
-      <div
-        id="map"
-        style="width: 100%;
-        height: 600px;
-        margin: 10px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
+    <div class="card d-flex flex-column">
+      <div> <%= link_to flat.title, flat_path(flat)  %></div>
+      <div> <%= flat.description %> </div>
+      <div> <%= flat.housing_type %> </div>
+      <div> <%= flat.max_ppl %> </div>
+      <div> <%= flat.price_per_night %></div>
+    </div>
   </div>
+  <% end %>
+</div>
 
 
+<div> 
+  <div class="search-form">
+    <form action="/search" method="get">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <div id="div-where">
+            <!-- <label for="location"> </label> -->
+            <div class="d-flex">
+              <input type="text" name="search[location]" id="location" placeholder="Anywhere" style="display: block;">
+              <input type="submit" value="Search">
+            </div>
+          </div>
+        </form>
+  </div>
+  <div id="map"
+
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+ </div>
   </div>
 
 <button id="book-button" hidden>XXX</button>
