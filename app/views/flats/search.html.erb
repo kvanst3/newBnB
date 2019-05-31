@@ -13,9 +13,9 @@
         </div>
         <div id="search-card-info">
           <div> <h3> <%= link_to flat.title, flat_path(flat)  %></div></h3>
-          <div> <b>Housing Type: </b><%= flat.housing_type %> </div>
-          <div> <b>Number of beds: </b><%= flat.max_ppl %> </div>
-          <div> <b>Price per night: </b><%= flat.price_per_night %>€</div>
+          <div>Housing Type: <%= flat.housing_type %> </div>
+          <div>Number of beds: <%= flat.max_ppl %> </div>
+          <div>Price per night: <%= flat.price_per_night %>€</div>
         </div>
       </div>
     <% end %>
