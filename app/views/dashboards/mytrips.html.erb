@@ -1,1 +1,22 @@
 mytrips.html.erb
+
+<div class="container">
+  <h4>Upcoming trips</h4>
+  <% @bookings.each do |booking| %>
+    <ul>
+      <% flat = Flat.find(booking.flat_id ) %>
+      <div class="d-flex">
+        <div class="mr-4">
+          <%= cl_image_tag flat.photo,  height: 300, width: 300, crop: :fill %>
+        </div>
+        <div>
+
+          <p><%= flat.title %></p>
+          <p>From <%= booking.start_date %> till <%= booking.end_date %></p>
+          <p><%= flat.description %></p>
+          <p>Price per night: $<%= flat.price_per_night%></p>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+</div>
