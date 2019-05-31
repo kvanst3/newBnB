@@ -22,10 +22,6 @@ class FlatPolicy < ApplicationPolicy
     true
   end
 
-  def update?
-    true
-  end
-
   def destroy?
     user_is_owner_or_admin?
   end

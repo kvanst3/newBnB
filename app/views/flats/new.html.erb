@@ -5,7 +5,7 @@
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :price_per_night %>
-        <%= f.input :housing_type %>
+        <%= f.input :housing_type, collection: ["House", "Flat", "Penthouse", "Loft", "Garden", "Tent", "Room"] %>
         <%= f.input :max_ppl %>
         <%= f.input :address %>
         <%= f.input :photo %>
