@@ -1,9 +1,66 @@
+.search-background-image {
+  background-image: url(./../../assets/bg_search.jpg);
+  opacity: 1;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.spacer-on-top {
+  height: 100px;
+  z-index:7;
+}
+
+#search-div-search-and-map {
+  display: flex;
+}
+
 #box-with-all-cards {
-  width: 67%
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+  z-index:7;
 }
 
 #map {
-  width: 33%;
-  height: 600px;
-  margin: 10px;
+  height: 100vh;
+  position: sticky!important;
+  right: 0;
+}
+
+.flat-picture {
+  //width: 250px;
+  height:200px;
+  object-fit: cover;
+  box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
+  margin-bottom: 8px;
+}
+
+.search-card {
+  //width: 300px;
+  height: 350px;
+  background-color: white;
+  border: 1px;
+  border-color: #676767;
+  border-style: solid;
+  position: relative;
+  border-radius: 4px;
+  padding: 16px;
+  text-align: center;
+
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+
+  opacity: 0.91;
+  // box-shadow: 4px 10px 12px #999;
+}
+
+#search-card-info {
+  text-align: left;
+
+}
+
+.map-and-search-form {
+ width: 33%;
 }
