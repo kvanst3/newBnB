@@ -8,7 +8,7 @@
 Booking.delete_all
 Flat.delete_all
 
-50.times do
+10.times do
   ename = Faker::Internet.email
   epass = Faker::Internet.password
   User.create(email: ename, password: epass)
@@ -517,6 +517,9 @@ flats_attribute = [
     user_id: 10
   }
 ]
-
-Flat.create!(flats_attribute)
+flats_attribute.each do |attribute|
+  f = Flat.new(attribute)
+  f.remote_photo_url = ["https://res.cloudinary.com/dykmcht73/image/upload/v1559234943/pmrxatr0iadsx4bvfuj5.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234867/ewpeugavwfhqczcsrywn.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234819/it31pzrqch6pp4sqm0kp.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234852/n5oihjcx2zf6ezqe4qwy.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234835/fiugeaub9yv7bs1l0y0e.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234424/d7rkoykzm2tjyecsqrk0.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234799/ecwwcsisl4gy45wplu2t.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234314/mhye5zjwxh3od66znl0k.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234343/hvizs9f3dhfsxn8xedww.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234378/vf08tbei2k3aweozq0pa.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234166/zoso77b2nje6xx0prchj.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234215/clsd7cfbibnfbcl83obl.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234272/fwmyiw2ijbse3mhwzkhz.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234077/u6rew95vokxvbbt5riki.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234104/gn5l92iyedthbknhwijm.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234128/ssyim7ncli97bgusq6hs.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559233954/seiytx1d9gy0rlmecdak.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234014/zzuzdbochkq7txzcwfla.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559234064/qrtenupqfm3go9c4qrsv.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559233899/xwxbaktqfajezewhwi8o.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559233920/sr78eouzgxja34tlvpbf.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559233937/fc8i2zdadplyk5q0fvb4.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559233680/gv8wmpkm0lwqniljdlg8.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559233728/m0wvmldmd12xnshizdh4.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559233849/ahvcu1nmh1hdtnia4xee.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559233602/ufrd1adnoht3olqy1tuh.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559233622/u2hefqdcovbog80eq9ec.jpg", "https://res.cloudinary.com/dykmcht73/image/upload/v1559233638/fsjbd5lqw2lcj4wlgyq8.jpg"].sample
+  f.save
+end
 puts "Done Seeding.."

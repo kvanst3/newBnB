@@ -42,16 +42,23 @@ class FlatsController < ApplicationController
   end
 
   def search
-    # raise
-    @flats = Flat.near(search_params[:location], 25)
 
-    @markers = @flats.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
-        image_url: helpers.asset_url('logo.png')
-      }
+    if params[:search][:location].present?
+      @flats = Flat.near(search_params[:location], 25)
+
+      @markers = @flats.map do |flat|
+        {
+          lat: flat.latitude,
+          lng: flat.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
+          image_url: helpers.asset_url('logo.png')
+        }
+      end
+
+
+
+    else
+      redirect_to root_path
     end
   end
 
