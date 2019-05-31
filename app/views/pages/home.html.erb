@@ -1,29 +1,30 @@
 
 <!-- <%= link_to "Go to Index", flats_path %> -->
 <div id="container-all">
-  <div class="container">
-    <h2>Book unique places to stay.</h2>
+  <div class="container" id="container-home">
+    <h2 id="home-h2">Book unique places to stay.</h2>
     <div class="new_form">
       <form action="/search" method="get">
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <div><label for="location">WHERE </label>
+        <div id="div-where">
+          <label for="location">WHERE </label>
           <input type="text" name="search[location]" id="location" placeholder="Anywhere" style="display: block;">
-
-
-      </div>
-
-      <div style="display: flex;">
-        <div>
-          <label for="checkin">CHECK-IN </label>
-          <input type="date" name="search[checkin]" id="start_date" style="display: block;">
         </div>
-        <div>
+
+        <div id="div-dates">
+          <div>
+            <label for="checkin">CHECK-IN </label>
+            <input type="date" name="search[checkin]" id="start_date" style="display: block">
+          </div>
+          <div>
           <label for="checkout">CHECK-OUT </label>
           <input type="date" name="search[checkout]" id="end_date" style="display: block;">
+          </div>
         </div>
 
-      <input type="submit" value="Search" id="book-button">
-    </form>
+          <input type="submit" value="Search" id="book-button">
+
+      </form>
 
     </div>
   </div>
