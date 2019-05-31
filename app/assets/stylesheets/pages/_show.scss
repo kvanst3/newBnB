@@ -1,5 +1,6 @@
 .show-container {
   display: flex;
+  padding: 16px;
 }
 
 .spacer-on-top-search {
@@ -14,8 +15,13 @@
 
 }
 #show-big-image {
-  width: 300px;
+  width: 450px;
   text-align: center;
+}
+
+.content-show {
+  text-align: left;
+  padding: 12px;
 }
 
 .show-card {
@@ -35,5 +41,37 @@
 }
 
 .show-search-form {
+  width: 600px;
+  height: 300px;
+  background-color: white;
+  border: 1px;
+  border-color: #676767;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 16px;
+  text-align: center;
+  margin-left: 120px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 
+  opacity: 0.91;
 }
+
+a:hover {
+  text-decoration: none;
+  color: #eb6909;
+}
+
+a {
+  color: #989898;
+}
+
+.asdfasdf {
+  font-weight: bolder;
+  display: inline;
+}
+
+.asdfasdf2 {
+  font-size: 25px;
+  display: inline;
+}
+

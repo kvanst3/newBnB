@@ -7,60 +7,59 @@
  <!-- Box with all the cards -->
 
   <div class="show-card">
-    <div class="row">
-      <div class="row"><%= cl_image_tag @flat.photo, id: "show-big-image" %></div>
+    <div >
+      <div ><%= cl_image_tag @flat.photo, id: "show-big-image" %></div>
     </div>
     <div id="show-card-info">
-      <div class="content">
-        <div class="row">
-          Name:
-          <%= @flat.title %>
+      <div class="content-show">
+        <div >
+          <p class="asdfasdf asdfasdf2">Name:</p>
+          <p class="asdfasdf2"> <%= @flat.title %> </p>
         </div>
-        <div class="row">
-          A bit more about this place:
+        <div >
+          <p class="asdfasdf">A bit more about this place:</p>
           <%= @flat.description %>
         </div>
-        <div class="row">
-          Price per night:
+        <div >
+          <p class="asdfasdf">Price per night:</p>
           <%= @flat.price_per_night %> €
         </div>
-        <div class="row">
-          Type of place:
+        <div >
+          <p class="asdfasdf">Type of place:</p>
           <%= @flat.housing_type %>
           </div>
-        <div class="row">
-          Number of beds:
+        <div >
+          <p class="asdfasdf">Number of beds:</p>
           <%= @flat.max_ppl %>people
         </div>
       </div>
     </div>
   </div>
 
-
-
-
-<div class="show-search-form"></div>
-  <div class="form">
-    <h5>Confirm dates & guests for total stay price
+  <div class="show-search-form">
+    <div class="form">
+      <h5>Confirm dates & guests for total stay price </h5>
       <div class="new_form">
-    <form action="/flats/<%= @flat.id %>/bookings" method="post">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <div style="display: flex;">
-        <div>
-          <label for="start_date">CHECK-IN</label>
-          <input type="date" name="booking[start_date]" id="start_date" style="display: block;">
+      <form action="/flats/<%= @flat.id %>/bookings" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div style="display: flex;">
+          <div>
+            <label for="start_date">CHECK-IN</label>
+            <input type="date" name="booking[start_date]" id="start_date" style="display: block;">
+          </div>
+          <div>
+            <label for="end_date">CHECK-OUT</label>
+            <input type="date" name="booking[end_date]" id="end_date" style="display: block;">
+          </div>
+          <div>
+            <label for="guest">Number of guests</label>
+            <input type="integer" name="booking[guest]" id="guest" style="display: block;">
+          </div>
         </div>
-        <div>
-          <label for="end_date">CHECK-OUT</label>
-          <input type="date" name="booking[end_date]" id="end_date" style="display: block;">
-        </div>
-        <div>
-          <label for="guest">Number of guests</label>
-          <input type="integer" name="booking[guest]" id="guest" style="display: block;">
-        </div>
-      <input type="submit" value="Book" id="book-button">
-    </form>
-  </div>
+        <input type="submit" value="Book" id="book-button">
+      </form>
+
+    </div>
   </div>
 </div>
 
