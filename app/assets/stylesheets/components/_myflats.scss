@@ -1,0 +1,62 @@
+.card-productt {
+  align-items: center;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 0px 24px;
+  width: 80%;
+  position: relative;
+};
+
+.card-productt h3 {
+  margin-top: 0px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-productt p {
+  margin-bottom: 0px;
+  opacity: 0.6;
+}
+
+#textt {
+  padding: 20px;
+  text-align: left;
+}
+
+#titlee {
+  margin-left: 40px;
+}
+
+#flat-edit-button {
+  text-align: right;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+// .title-and-edit {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+#edit-button{
+ text-decoration: none;
+ color: #989898;
+ font-weight: bold;
+ position: relative;
+ top: 10px;
+ right: 10px;
+}
+
+#edit-button:hover{
+ color: #eb6909;
+}
+
+.text-img {
+  display: flex;
+}
+
+#imgg {
+  margin-top: 48px;
+}

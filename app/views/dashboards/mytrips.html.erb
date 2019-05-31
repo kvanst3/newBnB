@@ -1,17 +1,15 @@
-mytrips.html.erb
-
-<div class="container">
-  <h4>Upcoming trips</h4>
+<div class="container navbar-spacing">
+  <h4 id="title">Upcoming trips</h4>
   <% @bookings.each do |booking| %>
     <ul>
       <% flat = Flat.find(booking.flat_id ) %>
-      <div class="d-flex">
-        <div class="mr-4">
-          <%= cl_image_tag flat.photo,  height: 300, width: 300, crop: :fill %>
+      <div class="card-product">
+        <div id="img">
+          <%= cl_image_tag flat.photo,  height: 100, width: 150, crop: :fill %>
         </div>
-        <div>
+        <div id="text">
 
-          <p><%= flat.title %></p>
+          <h3><%= flat.title %></h3>
           <p>From <%= booking.start_date %> till <%= booking.end_date %></p>
           <p><%= flat.description %></p>
           <p>Price per night: $<%= flat.price_per_night%></p>
