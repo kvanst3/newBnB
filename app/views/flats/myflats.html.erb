@@ -1,1 +1,24 @@
 myflats.html.erb
+
+<div class="container">
+  <% @flats.each do |flat| %>
+  <ul>
+    <div class="d-flex">
+        <div>
+          <%= cl_image_tag flat.photo,  height: 300, width: 300, crop: :fill %>
+        </div>
+        <div>
+          <div class="d-flex">
+            <h4>Name: <%= flat.title %></h4>
+            <p><%= link_to 'Edit', edit_flat_path(flat) %></p>
+          </div>
+          <p>Description: <%= flat.description %></p>
+          <p>Type: <%= flat.housing_type %></p>
+          <p>Price per night: $<%= flat.price_per_night%></p>
+          <p>Maximum number of guests: <%= flat.max_ppl %></p>
+          <p>address: <%= flat.address %></p>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+</div>
