@@ -1,24 +1,28 @@
-myflats.html.erb
 
-<div class="container">
+
+<div class="container navbar-spacing">
+  <h4 id="titlee">My flats</h4>
   <% @flats.each do |flat| %>
-  <ul>
-    <div class="d-flex">
-        <div>
-          <%= cl_image_tag flat.photo,  height: 300, width: 300, crop: :fill %>
-        </div>
-        <div>
-          <div class="d-flex">
-            <h4>Name: <%= flat.title %></h4>
-            <p><%= link_to 'Edit', edit_flat_path(flat) %></p>
+    <ul>
+      <div class="card-productt">
+        <div id="flat-edit-button"><%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_flat_path(flat) %></div>
+        <div class="text-img">
+          <div id="imgg">
+            <%= cl_image_tag flat.photo,  height: 100, width: 150, crop: :fill %>
           </div>
-          <p>Description: <%= flat.description %></p>
-          <p>Type: <%= flat.housing_type %></p>
-          <p>Price per night: $<%= flat.price_per_night%></p>
-          <p>Maximum number of guests: <%= flat.max_ppl %></p>
-          <p>address: <%= flat.address %></p>
+          <div id="textt">
+            <div class="title-and-edit">
+              <h3><%= flat.title %></h3>
+            </div>
+            <p>Description: <%= flat.description %></p>
+            <p>Type: <%= flat.housing_type %></p>
+            <p>Price per night: $<%= flat.price_per_night%></p>
+            <p>Maximum number of guests: <%= flat.max_ppl %></p>
+            <p>Address: <%= flat.address %></p>
+          </div>
         </div>
       </div>
     </ul>
   <% end %>
 </div>
+
